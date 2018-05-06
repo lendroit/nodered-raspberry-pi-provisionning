@@ -1,0 +1,13 @@
+- name: Install NodeRed
+  hosts: all
+  become: true
+  # roles: 
+  #   - packages
+  #   - node
+  #   - nodered
+  tasks: 
+    - name: Enable NodeRed service at launch
+      service:
+        name: nodered
+        state: restarted
+        enabled: yes
